@@ -84,7 +84,7 @@ limit 5;
 
 -- ¿Está "Academy Dinosaur" disponible para alquilar en la Tienda 1?
 
-select distinct d.store_id, title, c.inventory_id, case when return_date < c.last_update then 'Available'
+select distinct d.store_id, title, c.inventory_id, case when return_date is not null then 'Available'
 else 'Not available'
 end as Availability
 from film a
